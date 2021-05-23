@@ -1,0 +1,12 @@
+var int y, z, p;
+
+funktsioon lol(int b){
+    while (b < 10){
+        b = b + 10;
+    }
+    return b
+}
+
+p = 3;
+z = lol(p);
+print(z);
