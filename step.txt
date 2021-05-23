@@ -1,0 +1,10 @@
+var int a,b,k;
+a=2;
+b=5;
+k=1;
+while(b!=0)
+{
+k=k*a;
+b=b-1;
+}
+print(k);

@@ -1,0 +1,129 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    COLON
+    COMMENT
+
+Grammar
+
+Rule 0     S' -> programm
+Rule 1     programm -> var start
+Rule 2     identifier_list -> ID
+Rule 3     identifier_list -> identifier_list COMMA ID
+Rule 4     var -> var VAR type identifier_list TCOMMA
+Rule 5     var -> empty
+Rule 6     type -> INT
+Rule 7     type -> FLOAT
+Rule 8     type -> STR
+Rule 9     start -> statements
+Rule 10    start -> empty
+Rule 11    statements -> matched
+Rule 12    statements -> statements matched
+Rule 13    matched -> IF OPEN rel CLOSE THEN statement
+Rule 14    matched -> WHILE OPEN rel CLOSE statement
+Rule 15    matched -> function_block
+Rule 16    matched -> rel
+Rule 17    matched -> write
+Rule 18    function_block -> functions
+Rule 19    function_block -> function_block functions
+Rule 20    functions -> function var statement
+Rule 21    function -> FUNKTION ID args
+Rule 22    args -> OPEN prm CLOSE
+Rule 23    prm -> type identifier_list
+Rule 24    prm -> prm TCOMMA type identifier_list
+Rule 25    statement -> OPEN_CLASS start CLOSE_CLASS
+Rule 26    expr -> rel
+Rule 27    expr -> expr COMMA rel
+Rule 28    rel -> NOT unary
+Rule 29    rel -> RETURN unary
+Rule 30    rel -> rel AND unary
+Rule 31    rel -> rel OR unary
+Rule 32    rel -> unary RELOP unary
+Rule 33    rel -> unary
+Rule 34    unary -> term
+Rule 35    unary -> assign
+Rule 36    assign -> fact ASSIGN term
+Rule 37    assign -> fact
+Rule 38    term -> join
+Rule 39    term -> term PLUSMINUS join
+Rule 40    join -> fact
+Rule 41    join -> join DIVMULT fact
+Rule 42    write -> WRITE OPEN fact CLOSE TCOMMA
+Rule 43    read -> READ OPEN CLOSE TCOMMA
+Rule 44    fact -> ID
+Rule 45    fact -> ID OPEN expr CLOSE
+Rule 46    fact -> INT_NUM
+Rule 47    fact -> CONTINUE
+Rule 48    fact -> BREAK
+Rule 49    fact -> FLOAT_NUM
+Rule 50    fact -> OPEN rel CLOSE
+Rule 51    fact -> type fact
+Rule 52    fact -> NOT fact
+Rule 53    fact -> QUOM STRING QUOM
+Rule 54    fact -> fact TCOMMA
+Rule 55    empty -> <empty>
+
+Terminals, with rules where they appear
+
+AND                  : 30
+ASSIGN               : 36
+BREAK                : 48
+CLOSE                : 13 14 22 42 43 45 50
+CLOSE_CLASS          : 25
+COLON                : 
+COMMA                : 3 27
+COMMENT              : 
+CONTINUE             : 47
+DIVMULT              : 41
+FLOAT                : 7
+FLOAT_NUM            : 49
+FUNKTION             : 21
+ID                   : 2 3 21 44 45
+IF                   : 13
+INT                  : 6
+INT_NUM              : 46
+NOT                  : 28 52
+OPEN                 : 13 14 22 42 43 45 50
+OPEN_CLASS           : 25
+OR                   : 31
+PLUSMINUS            : 39
+QUOM                 : 53 53
+RELOP                : 32
+RETURN               : 29
+STR                  : 8
+STRING               : 53
+TCOMMA               : 4 24 42 43 54
+THEN                 : 13
+VAR                  : 4
+WHILE                : 14
+WRITE                : 42
+error                : 
+
+Nonterminals, with rules where they appear
+
+READ                 : 43
+args                 : 21
+assign               : 35
+empty                : 5 10
+expr                 : 27 45
+fact                 : 36 37 40 41 42 51 52 54
+function             : 20
+function_block       : 15 19
+functions            : 18 19
+identifier_list      : 3 4 23 24
+join                 : 38 39 41
+matched              : 11 12
+prm                  : 22 24
+programm             : 0
+read                 : 
+rel                  : 13 14 16 26 27 30 31 50
+start                : 1 25
+statement            : 13 14 20
+statements           : 9 12
+term                 : 34 36 39
+type                 : 4 23 24 51
+unary                : 28 29 30 31 32 32 33
+var                  : 1 4 20
+write                : 17
+
