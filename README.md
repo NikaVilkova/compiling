@@ -1,6 +1,8 @@
 # compiling
 Данный проект является курсовой работой
 
+Ссылка на презентацию и видео: https://drive.google.com/drive/folders/1rfa-Dnt8JjDWixCNjVgmU76s01CvCUdL?usp=sharing
+
 -----------------------------------------
 
 Для запуска используйте файл generations.py
